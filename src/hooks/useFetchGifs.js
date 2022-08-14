@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { getGifs } from '../helpers/getGifs';
 
-const useGetGifs = ({category}) => {
+const useGetGifs = (category) => {
     console.log('useGetGifs->', category);
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
