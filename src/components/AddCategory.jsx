@@ -11,7 +11,6 @@ const AddCategory = ({onNewCategory}) => {
     const onSubmit = (e) => {
         e.preventDefault();
         if(inputValue.trim().length <= 1) return; 
-        console.log(inputValue);
         onNewCategory(inputValue.trim());        
         setInputValue('');           
     }

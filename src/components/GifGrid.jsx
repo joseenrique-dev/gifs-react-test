@@ -1,19 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { getGifs } from '../helpers/getGifs';
+import useGetGifs from '../hooks/useGetGifs';
 import GifItem from './GifItem';
 
-const GiftGrid = ({ category }) => {
-    const [images, setImages] = useState([]);
-
-    const getImages = async () => {
-        const images = await getGifs(category);
-        console.log('IMG',images);
-        setImages(images);
-    }
-
-    useEffect(() => {
-        getImages()
-    } , []);
+const GifGrid = ({ category }) => {
+    console.log('GifGrid - render', category);
+    const {
+        images,
+        loading,
+    } = useGetGifs({category});
 
     return (
     <>
@@ -32,4 +27,4 @@ const GiftGrid = ({ category }) => {
     )
 }
 
-export default GiftGrid
+export default GifGrid
