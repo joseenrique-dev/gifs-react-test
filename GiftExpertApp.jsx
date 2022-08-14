@@ -1,24 +1,37 @@
 import { useState } from 'react';
-import AddCategfory from './src/components/AddCategory';
+import AddCategory from './src/components/AddCategory';
+import GiftGrid from './src/components/GiftGrid';
 
 export default function GiftExpertApp() {
     const [categories, setCategories] = useState(['Sports', 'Electronics']);
 
+    const onAddCategory = (newCategory) => {
+        if(categories.includes( newCategory) ) return;
+        setCategories((categories) => [...categories, newCategory]);
+    } 
+
+    const showErrorMessage = (message) => {
+        return (
+            <div className="error-message">
+                {message}
+            </div>
+        )
+    }
+
   return (
     <div>
       <h1>Gift expert App</h1>
-      <AddCategfory setCategories={setCategories} categories={categories}/>
+      <AddCategory 
+        onNewCategory={ onAddCategory }
+      />
       {
         categories.length > 0 ?
-        categories.map((category, index) => {
-          return (
-            <div key={index}>
-              <ul>
-                <li>{index+1}: {category}</li>
-              </ul>
-            </div>
-          )
-        })
+        categories.map((category, index) => (
+            <GiftGrid 
+              key={index} 
+              category={category} 
+            />
+          ))
         :
         <p>No categories yet :(</p>
       }
