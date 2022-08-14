@@ -2,7 +2,6 @@ import useFetchGifs from '../hooks/useFetchGifs';
 import { GifItem } from './GifItem';
 
 export const GifGrid = ({ category }) => {
-    console.log('GifGrid - render', category);
     const {
         images,
         loading,

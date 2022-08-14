@@ -16,7 +16,7 @@ export const AddCategory = ({onNewCategory}) => {
     }
   return (
     <div>
-        <form onSubmit={(e) => onSubmit(e)}>
+        <form onSubmit={onSubmit}>
             <input 
                 type="text" 
                 placeholder="Search for a gift"

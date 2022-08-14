@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { getGifs } from '../helpers/getGifs';
 
 const useGetGifs = (category) => {
-    console.log('useGetGifs->', category);
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     
@@ -16,7 +15,6 @@ const useGetGifs = (category) => {
         getImages()
     } , []);
 
-    console.log('result',{images, loading})
     return {images, loading};
 }
 
