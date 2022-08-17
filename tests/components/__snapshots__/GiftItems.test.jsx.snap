@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GifItems tests should render correctly 1`] = `
+<div
+  class="card"
+>
+  <img
+    alt="Fake title"
+    src="Fake url"
+  />
+  <p>
+    Fake title
+  </p>
+</div>
+`;
