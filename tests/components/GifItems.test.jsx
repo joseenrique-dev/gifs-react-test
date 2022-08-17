@@ -11,7 +11,10 @@ describe('GifItems tests', () => {
 
     it('should render the image with the correct url and the indicated ALT', () => {
         render(<GifItem title={ fakeTitle } url={ fakeUrl } />);
-        expect(screen.getByRole('img').src).toBe(fakeUrl);
-        expect(screen.getByRole('img').alt).toBe(fakeTitle);
+        const { alt, src } = screen.getByRole('img');
+        expect(src).toBe(fakeUrl);
+        expect(alt).toBe(fakeTitle);
+        // expect(screen.getByRole('img').src).toBe(fakeUrl);
+        // expect(screen.getByRole('img').alt).toBe(fakeTitle);
     });
 });
