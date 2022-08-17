@@ -6,7 +6,7 @@ exports[`GifItems tests should render correctly 1`] = `
 >
   <img
     alt="Fake title"
-    src="Fake url"
+    src="http://fakeurl.com/"
   />
   <p>
     Fake title
