@@ -17,4 +17,9 @@ describe('GifItems tests', () => {
         // expect(screen.getByRole('img').src).toBe(fakeUrl);
         // expect(screen.getByRole('img').alt).toBe(fakeTitle);
     });
+
+    it('should render the title', () => {
+        render(<GifItem title={ fakeTitle } url={ fakeUrl } />);
+        expect(screen.getByText(fakeTitle)).toBeTruthy();
+    });
 });
