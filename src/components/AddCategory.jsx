@@ -17,7 +17,7 @@ export const AddCategory = ({onNewCategory}) => {
     }
   return (
     <div>
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} aria-label='form'>
             <input 
                 type="text" 
                 placeholder="Search for a gift"
